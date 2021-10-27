@@ -214,8 +214,6 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
-                    
-                    
                   ],
                 ),
               ),
@@ -343,6 +341,64 @@ class _MyAppState extends State<MyApp> {
                         setState(() {});
                       },
                       child: const Text("Kiểm tra snt",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                child: Row(
+                  children: [
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        int Giaithua = 1;
+                        for (int i = 1; i <= double.parse(num1.text); i++)
+                          Giaithua *= i;
+                        result = num1.text + "!= " + Giaithua.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Tính giai thừa",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        int sum = 0;
+                        for (int i = 1; i < double.parse(num1.text); i++) {
+                          if (double.parse(num1.text) % i == 0) sum += i;
+                        }
+                        if (sum == double.parse(num1.text))
+                          result = num1.text + " là số hoàn hảo";
+                        else
+                          result = num1.text + " không là số hoàn hảo";
+                        setState(() {});
+                      },
+                      child: const Text("KT số hoàn hảo",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double sqr = sqrt(double.parse(num1.text));
+                        if (sqr * sqr == double.parse(num1.text)) {
+                          result = num1.text + " là số chính phương";
+                        } else {
+                          result = num1.text + " không là số chính phương";
+                        }
+                        setState(() {});
+                      },
+                      child: const Text("KT số chính phương",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
