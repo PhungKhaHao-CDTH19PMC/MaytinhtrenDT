@@ -263,6 +263,73 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double max = double.parse(num1.text);
+                        if (double.parse(num2.text) >= max) {
+                          max = double.parse(num2.text);
+                        }
+                        if (double.parse(num3.text) > max) {
+                          max = double.parse(num3.text);
+                        }
+                        result = "Số lớn nhất là: " + max.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Tìm số lớn nhất",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double min = double.parse(num1.text);
+                        if (double.parse(num2.text) <= min) {
+                          min = double.parse(num2.text);
+                        }
+                        if (double.parse(num3.text) <= min) {
+                          min = double.parse(num3.text);
+                        }
+                        result = "Số lớn nhất là: " + min.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Tìm số nhỏ nhất",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        if (double.parse(num1.text) < 2)
+                          result = num1.text + " không là số nguyên tố";
+                        else {
+                          int count = 0;
+                          for (int i = 2;
+                              i <= sqrt(double.parse(num1.text));
+                              i++) {
+                            if (double.parse(num1.text) % i == 0) {
+                              count++;
+                            }
+                          }
+                          if (count == 0) {
+                            result = num1.text + " là số nguyên tố";
+                          } else {
+                            result = num1.text + " không là số nguyên tố";
+                          }
+                        }
+
+                        setState(() {});
+                      },
+                      child: const Text("Kiểm tra số nguyên tố",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
                   ],
                 ),
               ),
