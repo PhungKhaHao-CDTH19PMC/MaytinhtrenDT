@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32),
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ nhất',
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32),
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ hai',
@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32),
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ ba',
@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32),
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
                 child: Row(
                   children: [
                     TextButton(
@@ -210,10 +210,19 @@ class _MyAppState extends State<MyApp> {
                         result = "Tổng = " + Tong.toString();
                         setState(() {});
                       },
-                      child: const Text("Tính tổng hai số",
+                      child: const Text("Tổng hai số",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
+                    
+                    
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                child: Row(
+                  children: [
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(fontSize: 20),
@@ -225,7 +234,7 @@ class _MyAppState extends State<MyApp> {
                         result = "Hiệu = " + Hieu.toString();
                         setState(() {});
                       },
-                      child: const Text("Tính hiệu hai số",
+                      child: const Text("Hiệu hai số",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
@@ -240,7 +249,7 @@ class _MyAppState extends State<MyApp> {
                         result = "Tích = " + Tich.toString();
                         setState(() {});
                       },
-                      child: const Text("Tính tích hai số",
+                      child: const Text("Tích hai số",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
@@ -259,10 +268,17 @@ class _MyAppState extends State<MyApp> {
                         }
                         setState(() {});
                       },
-                      child: const Text("Tính thương hai số",
+                      child: const Text("Thương hai số",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                child: Row(
+                  children: [
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(fontSize: 20),
@@ -326,7 +342,7 @@ class _MyAppState extends State<MyApp> {
 
                         setState(() {});
                       },
-                      child: const Text("Kiểm tra số nguyên tố",
+                      child: const Text("Kiểm tra snt",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
