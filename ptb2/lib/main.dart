@@ -41,14 +41,14 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 0, 32, 32),
+                padding: EdgeInsets.fromLTRB(32, 0, 32, 5),
                 child: Text(
                   'khi giải phương trình',
                   style: const TextStyle(fontSize: 30, color: Colors.red),
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ nhất',
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ hai',
@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 15),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Nhập số thứ ba',
@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 15, 32, 5),
                 child: Row(
                   children: [
                     TextButton(
@@ -218,7 +218,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 5),
                 child: Row(
                   children: [
                     TextButton(
@@ -274,7 +274,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 5),
                 child: Row(
                   children: [
                     TextButton(
@@ -348,7 +348,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(32, 32, 32, 0),
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 5),
                 child: Row(
                   children: [
                     TextButton(
@@ -385,6 +385,14 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
+                    
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(32, 5, 32, 5),
+                child: Row(
+                  children: [
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(fontSize: 20),
@@ -402,8 +410,82 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.blue)),
                     ),
-                  ],
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double Tong =
+                            double.parse(num1.text) + double.parse(num2.text)+ double.parse(num3.text);
+
+                        result = "Tổng = " + Tong.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Tổng ba số",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                  ]
                 ),
+              ),
+              Container(
+                 padding: EdgeInsets.fromLTRB(32, 5, 32, 5),
+                 child: Row(
+                   children: [
+                     TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double Hieu =
+                            double.parse(num1.text) - double.parse(num2.text)- double.parse(num3.text);
+
+                        result = "Hiệu = " + Hieu.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Hiệu ba số",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        double Tich =
+                            double.parse(num1.text) * double.parse(num2.text)* double.parse(num3.text);
+
+                        result = "Tích = " + Tich.toString();
+                        setState(() {});
+                      },
+                      child: const Text("Tích ba số",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        if (int.parse(num2.text) == 0) {
+                          result = "Không được chia cho 0!!!!!!";
+                        } 
+                        else if(int.parse(num3.text) == 0){
+                          result = "Không được chia cho 0!!!!!!";
+                        }
+                        else {
+                          double Thuong =
+                          double.parse(num1.text) / double.parse(num2.text)/ double.parse(num3.text);
+                          result = "Thương = " + Thuong.toString();
+                        }
+                        setState(() {});
+                      },
+                      child: const Text("Thương ba số",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ),
+                   ],
+                 ),
               ),
               Text(result),
               Text(result1),
